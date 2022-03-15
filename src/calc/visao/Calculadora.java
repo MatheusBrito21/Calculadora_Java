@@ -2,6 +2,9 @@ package calc.visao;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 
 import javax.swing.JFrame;
 
@@ -9,7 +12,13 @@ import javax.swing.JFrame;
 public class Calculadora extends JFrame{
 
 	public Calculadora() {
+		
+		URL caminhoIcone = getClass().getResource("/imagens/iconCalc.png");
+		Image icone = Toolkit.getDefaultToolkit().getImage(caminhoIcone);
+		this.setIconImage(icone);
+		
 		organizarLayout();
+		setTitle("Calculadora");
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
