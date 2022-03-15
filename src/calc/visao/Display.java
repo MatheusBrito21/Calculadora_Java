@@ -26,13 +26,15 @@ public class Display extends JPanel implements MemoriaObservador {
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("courier", Font.ROMAN_BASELINE, 25));
 		
-		setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 25));
+		setLayout(new FlowLayout(FlowLayout.RIGHT));
+		
 		
 		add(label);
 	}
 	@Override
 	public void valorAlterado(String novoValor) {
 		label.setText(novoValor);
+		
 	}
 	
 }

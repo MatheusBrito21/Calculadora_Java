@@ -84,6 +84,7 @@ public class Memoria {
 		}
 		
 		String resultadoString = Double.toString(resultado).replace(".", ",");
+		
 		boolean isInteiro = resultadoString.endsWith(",0");
 		
 		return isInteiro ? resultadoString.replace(",0","") : resultadoString;
