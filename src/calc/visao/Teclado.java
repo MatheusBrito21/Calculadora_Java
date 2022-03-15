@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import calc.modelo.Memoria;
+
 @SuppressWarnings("serial")
 public class Teclado extends JPanel implements ActionListener{
 	//collor picker
@@ -25,7 +27,7 @@ public class Teclado extends JPanel implements ActionListener{
 		//preenche o conteiner Teclado nos dois eixos
 		c.weighty = 1;
 		c.weightx = 1;
-		//preenche os espaços entre os elementos
+		//preenche os espaÃ§os entre os elementos
 		c.fill = GridBagConstraints.BOTH;
 		//layout de grade com linhas e colunas
 		//setLayout(new GridLayout(5,4));
@@ -33,9 +35,8 @@ public class Teclado extends JPanel implements ActionListener{
 		//linha1
 		/*define o o tamanho da grid
 		*/
-		c.gridwidth = 2;
-		adicionarBotao("AC" ,CINZA_ESCURO, c ,0,0);
-		c.gridwidth = 1;//retorna a configuração anterior da grid
+		adicionarBotao("C" ,CINZA_ESCURO, c ,0,0);
+		adicionarBotao("±", CINZA_ESCURO, c, 1, 0);
 		adicionarBotao("√", CINZA_CLARO, c, 2, 0);
 		adicionarBotao("+", LARANJA, c, 3, 0);
 		
@@ -79,7 +80,7 @@ public class Teclado extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton) {
 			JButton botao = (JButton)e.getSource();
-		System.out.println(botao.getText());
+		Memoria.getMemoria().processarComando(botao.getText());
 		}
 	}
 	
