@@ -29,7 +29,7 @@ public class Teclado extends JPanel {
 		
 		//linha1
 		/*define o o tamanho da grid
-		similar ao colspan de html*/
+		*/
 		c.gridwidth = 2;
 		adicionarBotao("AC" ,CINZA_ESCURO, c ,0,0);
 		c.gridwidth = 1;//retorna a configuração anterior da grid
