@@ -16,25 +16,27 @@ public class Display extends JPanel implements MemoriaObservador {
 	//para uma sequência de texto curta ou uma imagem, ou ambas
 	private JLabel label;
 	
+	
 	public Display() {
 		//adiciona o Dipslay na lista de observadores
 		Memoria.getMemoria().registrarObservador(this);
 		
 		setBackground(new Color(46, 49, 50));
 		
-		label = new JLabel(Memoria.getMemoria().getValorAtual());
+		String valorFormatado = Memoria.getMemoria().getValorAtual();
+		
+		label = new JLabel(valorFormatado);
 		label.setForeground(Color.WHITE);
-		label.setFont(new Font("courier", Font.ROMAN_BASELINE, 30));
-		
+		label.setFont(new Font("courier", Font.PLAIN, 20));
 		setLayout(new FlowLayout(FlowLayout.RIGHT, 10 , 25));
-		
-		
 		add(label);
 	}
 	@Override
 	public void valorAlterado(String novoValor) {
 		label.setText(novoValor);
-		
 	}
+	
+	
+	
 	
 }

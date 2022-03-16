@@ -26,6 +26,7 @@ public class Memoria {
 		return memoria;
 	}
 	public String getValorAtual() {
+		
 		return valorAtual.isEmpty() ? "0":valorAtual;
 	}
 
